@@ -1,0 +1,97 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.nav-link1{
+    border: 1px solid #b7acac;
+    border-radius: 17px;
+    padding: 6px 23px;
+    font-size: 0.8rem;
+    color: #262626;
+    margin-right: 10px;
+    font-weight: 500;
+    line-height: 22px;
+    text-decoration: none;
+}
+.nav-link1:hover{
+    background-color: #fff107;
+}
+.table-wid{
+    height: 4rem;
+}
+
+
+.table_head{
+font-size: 0.8rem;
+font-weight: 400;
+}
+
+thead{
+    border-bottom: 1PX solid #b7acac;
+}
+
+.table_body{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.shop{
+    display: none;
+}
+.nav1{
+    display: none;
+}
+
+
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    box-shadow: 0px 2px 8px 0px #C4CAD4;
+}
+
+.sidenavbrand {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: thin solid #F3F4F6;
+    margin-bottom: .5rem;
+}
+
+.sidenav-options {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav-options a {
+    margin: .5rem 0 1.5rem;
+}
+
+
+
+
+@media (min-width: 350px) and (max-width: 520px) {
+    .sidebar {
+        height: 10vh;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
+        z-index: 1;
+    }
+
+    .sidenavbrand {
+        display: none;
+    }
+
+    .sidenav-options {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+}

@@ -1,0 +1,248 @@
+.complete-settle{
+    display: flex;
+    margin: 2rem 1rem;
+}
+.email-section{
+    right: 4rem;
+    position: absolute;
+}
+.middle-content{
+    margin: 9rem 2rem;
+}
+.image-section{
+    text-align: center;
+}
+.image-details{
+    margin: 1rem 11rem;
+    text-align: initial;
+    width: 58%;
+}
+.shop{
+    display: none;
+}
+.nav1{
+    display: none;
+}
+
+
+
+/* threads css */
+button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 14px;
+    padding: 4px 8px;
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+button:hover,
+button:focus,
+button:active {
+    cursor: pointer;
+    background-color: #ecf0f1;
+}
+.comment-thread {
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+    padding: 0 30px;
+    background-color: #fff;
+    border: 1px solid transparent; /* Removes margin collapse */
+}
+.m-0 {
+    margin: 0;
+}
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Comment */
+
+.comment {
+    position: relative;
+    margin: 20px auto;
+}
+.comment-heading {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 14px;
+    margin-bottom: 3rem;
+}
+.comment-voting {
+    width: 20px;
+    /* height: 32px; */
+    /* border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px; */
+}
+.comment-voting button {
+    display: block;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+}
+.comment-info {
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    border: 2px solid #E7EAEE;
+    height: 74px;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+.comment-author {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: bold;
+    text-decoration: none;
+}
+.comment-author:hover {
+    text-decoration: underline;
+}
+
+/* Adjustments for the comment border links */
+
+.comment-border-link {
+    display: block;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    width: 10px;
+    height: calc(100% - 50px);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    background-color: #FFD200;
+    background-clip: padding-box;
+    margin-left: 4px;
+}
+.comment-border-link:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.comment-body {
+    padding: 0 20px;
+    padding-left: 28px;
+}
+.replies {
+    margin-left: 28px;
+}
+.m1{
+    display: flex;
+}
+/* Adjustments for toggleable comments */
+
+details.comment summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+}
+details.comment summary::-webkit-details-marker {
+    display: none;
+}
+details.comment:not([open]) .comment-heading {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* .comment-heading::after {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    align-self: center;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.55);
+}
+details.comment[open] .comment-heading::after {
+    content: "Click to hide";
+}
+details.comment:not([open]) .comment-heading::after {
+    content: "Click to show";
+} */
+
+/* Adjustment for Internet Explorer */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* Resets cursor, and removes prompt text on Internet Explorer */
+    .comment-heading {
+        cursor: default;
+    }
+    details.comment[open] .comment-heading::after,
+    details.comment:not([open]) .comment-heading::after {
+        content: " ";
+    }
+}
+
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    box-shadow: 0px 2px 8px 0px #C4CAD4;
+}
+
+.sidenavbrand {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: thin solid #F3F4F6;
+    margin-bottom: .5rem;
+}
+
+.sidenav-options {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav-options a {
+    margin: .5rem 0 1.5rem;
+}
+.email-section{
+    display: none;
+}
+
+
+
+
+
+@media (min-width: 350px) and (max-width: 520px) {
+    .sidebar {
+        height: 10vh;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
+        z-index: 1;
+    }
+
+    .sidenavbrand {
+        display: none;
+    }
+
+    .sidenav-options {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .image-details{
+        margin: 1rem;
+        text-align: initial;
+        width: 100%;
+    }
+    .m1{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+}

@@ -1,0 +1,149 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sign_up-div-1 {
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.sign_up-div-1 h1 {
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.sign_up-div-1 h4 {
+    font-size: 1.2rem;
+    color: #9B9B9B;
+}
+
+.register-input {
+    text-align: start;
+    width: 49%;
+    margin: 1rem 0;
+}
+
+.register-input label {
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.register-input input:focus {
+    border: 1px solid #FFD200 !important;
+    box-shadow: none !important;
+
+}
+
+.register-input select:focus {
+    border: 1px solid #FFD200 !important;
+    box-shadow: none !important;
+
+}
+
+.input-span {
+    color: #9B9B9B;
+    font-weight: 400;
+}
+
+.input-group-text {
+    background-color: white !important;
+    border-right: none;
+    border: 1px solid #909090;
+}
+
+.input-grp {
+    border-left: none !important;
+}
+
+.input-grp2 {
+    border-right: none !important;
+    border-left: none !important;
+}
+
+.input-btn {
+    border-radius: 0 3px 3px 0!important;
+    background-color: #FFD200 !important;
+    color: black !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+
+.register-input2 {
+    width: 100%;
+    text-align: start;
+    margin-bottom: 2rem; 
+}
+
+.register-input2 label {
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.register-input2 input:focus {
+    border: 1px solid #FFD200 !important;
+    box-shadow: none !important;
+
+}
+
+.input-btn2 {
+    margin: 2rem 0;
+    border-radius: 3px !important;
+    background-color: #FFD200 !important;
+    color: black !important;
+    font-weight: 700 !important;
+    border: none !important;
+    padding: 0.5rem 8rem !important;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.register-para p {
+    font-weight: 600;
+}
+
+.register-para a {
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+@media (min-width: 350px) and (max-width: 520px) {
+    .sign_up-div-1 {
+        box-shadow: none;
+    }
+
+   .sign_up-div-1 h5 {
+        font-size: 1rem;
+    }
+
+    .sign_up-div-1 h1 {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .sign_up-div-1 h4 {
+        font-size: .8rem;
+    }
+
+    .register-input {
+        width: 100%;
+    }
+
+    .register-input label {
+        font-size: .8rem;
+    }
+
+    .register-input input {
+        font-size: 1rem;
+    }
+
+    .input-btn {
+        width: 30%;
+        font-size: .8rem !important;
+    }
+
+    .input-btn2 {
+        padding: 0.5rem 6rem !important;
+    }
+}

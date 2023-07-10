@@ -1,0 +1,317 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    box-shadow: 0px 2px 8px 0px #C4CAD4;
+}
+
+.sidenavbrand {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: thin solid #F3F4F6;
+    margin-bottom: .5rem;
+}
+
+.sidenav-options {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav-options a {
+    margin: .5rem 0 1.5rem;
+}
+
+.silver {
+    border: #C4CAD4 thin solid;
+    padding: 1.5rem !important;
+    margin: 1rem;
+    border-radius: 12px;
+}
+
+.silver h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.amount {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.amount h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.amount span {
+    padding: 0 1rem !important;
+    border-left: #C4CAD4 solid thin;
+}
+
+.silver h4 {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #3C4353;
+}
+
+.sub-btn {
+    margin: 1.5rem 0;
+    width: 100% !important;
+    font-weight: 600 !important;
+}
+
+.silver-options {
+    margin: 1rem 0;
+    display: flex;
+}
+
+.silver-options img {
+    height: 1.5rem;
+    margin-right: .5rem;
+}
+
+.silver-options p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.paltinum {
+    border: #C4CAD4 thin solid;
+    padding: 1.5rem !important;
+    margin: 1rem;
+    border-radius: 12px;
+    background: #FFD200;
+    transform: scale(1.05);
+}
+
+.paltinum h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.amount {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.amount h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.amount span {
+    padding: 0 1rem !important;
+    border-left: #000000 solid thin;
+}
+
+.paltinum h4 {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #3C4353;
+}
+
+.pl-sub-btn {
+    margin: 1.5rem 0;
+    width: 100% !important;
+    font-weight: 600 !important;
+    background-color: #ffffff !important;
+}
+
+.paltinum-options {
+    margin: 1rem 0;
+    display: flex;
+}
+
+.paltinum-options img {
+    height: 1.5rem;
+    margin-right: .5rem;
+}
+
+.paltinum-options p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.gold {
+    border: #C4CAD4 thin solid;
+    padding: 1.5rem !important;
+    margin: 1rem;
+    border-radius: 12px;
+}
+
+.gold h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.amount {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.amount h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.amount span {
+    padding: 0 1rem !important;
+    border-left: #C4CAD4 solid thin;
+}
+
+.gold h4 {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #3C4353;
+}
+
+.gold-options {
+    margin: 1rem 0;
+    display: flex;
+}
+
+.gold-options img {
+    height: 1.5rem;
+    margin-right: .5rem;
+}
+
+.gold-options p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+@media (min-width: 350px) and (max-width: 520px) {
+    .sidebar {
+        height: 10vh;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
+        z-index: 1;
+    }
+
+    .sidenavbrand {
+        display: none;
+    }
+
+    .sidenav-options {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .data-section {
+        height: 90vh !important;
+        overflow-y: scroll;
+    }
+
+    .price-div h1 {
+        text-align: center;
+    }
+
+    .silver-data {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .silver h3 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: .8rem;
+    }
+
+    .amount {
+        display: flex;
+        width: 56%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .amount h1 {
+        font-size: 1rem;
+        font-weight: 800;
+        margin: 0;
+    }
+    
+    .silver-options p {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: .8rem;
+    }
+    
+    .silver h4 {
+        display: none;
+    }
+
+    .paltinum {
+        transform: scale(1);
+    }
+
+    .paltinum-data {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .paltinum h3 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: .8rem;
+    }
+
+    .paltinum-options p {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: .8rem;
+    }
+
+    .paltinum h4 {
+        display: none;
+    }
+
+    .gold-data {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .gold h3 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: .8rem;
+    }
+
+    .gold-options p {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: .8rem;
+    }
+
+    .gold h4 {
+        display: none;
+    }
+}

@@ -1,0 +1,100 @@
+/* Header CSS */
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.logo img{
+    width: 6rem;
+}
+.main-nav{
+   
+    align-items: baseline !important;
+    margin-left: 7rem;
+}
+.search-box input{
+    width: 24rem !important;
+    height: 3rem;
+    border-radius: 2rem;
+}
+.nav-cart li{
+    margin-right: 2rem;
+}
+
+.nav-margin li a{
+    margin: 0 1rem;
+}
+.search-button{
+    background-color: white;
+    border-radius: 0 2rem 2rem 0;
+    align-items: center;
+    display: flex;
+}
+.search-button:hover{
+    background-color: white;
+}
+.toggle-button{
+    right: 2rem;
+    position: fixed;
+}
+.shop{
+    margin-left: 5rem;
+}
+.dot {
+    height: 34px;
+    width: 34px;
+    background-color:#fff107;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.search-button img{
+    width: 1rem;
+    margin-top: 0.2rem;
+}
+.cat{
+    margin: 0.5rem;
+    height: 35px;
+    width: 35px;
+    background-color: #fff107;
+    border-radius: 15%;
+    display: inline-block;
+}
+.dropdown-toggle::after{
+    display: none;
+}
+.nav1{
+    margin-left: 5rem;
+}
+.drop{
+    border-right: 1px solid grey;
+}
+@media screen and (max-width: 1377px) {
+    .search-box{
+        display: none;
+    }
+    
+}
+@media (min-width: 350px) and (max-width: 520px) {
+
+
+    .nav-cart {
+        margin-right: 1rem;
+    }
+    .main-nav {
+        margin-left: 1rem;
+    }
+    .cart-icon{
+        display: none;
+    }
+    .shop{
+        display: block;
+        margin-left: 0rem;
+    }
+    .nav1{
+        display: block;
+        margin-left: 0;
+    }
+}
+
+
+/* END HEADER CSS */

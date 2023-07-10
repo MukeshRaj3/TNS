@@ -1,0 +1,109 @@
+.details{
+    padding: 2rem;
+    margin-right: 4rem;
+}
+.heading{
+    font-size: 2rem;
+    width: 80%;
+    font-weight: 600;
+    margin-left: 2rem;
+}
+.user-image{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.user-image-input{
+    /* text-align: center; */
+}
+input{
+     border: 1px solid grey !important;
+     height: 2.5rem;
+}
+input[type="file"]::file-selector-button {
+    color: black;
+    padding: 0.5em;
+   background-color: #FFD200;
+    border-radius: 3px;
+}
+label{
+    font-weight: 600;
+}
+.fields{
+    margin-top: 2rem;
+}
+.save-btn{
+    float: right;
+    width: 6rem;
+    margin-top: 2rem;
+}
+
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    box-shadow: 0px 2px 8px 0px #C4CAD4;
+}
+
+.sidenavbrand {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: thin solid #F3F4F6;
+    margin-bottom: .5rem;
+}
+
+.sidenav-options {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav-options a {
+    margin: .5rem 0 1.5rem;
+}
+.cart-icon{
+    display: none;
+}
+.image-input{
+    width: 20%; font-size: 0.7rem;
+    height: 2rem !important;
+}
+
+
+
+@media (min-width: 300px) and (max-width: 520px) {
+    .sidebar {
+        height: 10vh;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
+        z-index: 1;
+    }
+
+    .sidenavbrand {
+        display: none;
+    }
+
+    .sidenav-options {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .fields{
+        margin-top: 1rem;
+    }
+    .image-input{
+        width: 50%; font-size: 0.7rem;
+    }
+    .details{
+        padding: 2rem;
+        margin-right: 1rem;
+    }
+
+}
