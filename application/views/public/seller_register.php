@@ -171,20 +171,37 @@
 
             <?php } ?>
             <form action="<?php echo base_url('account/seller_register'); ?>" method="post" enctype="multipart/form-data">
-            <div class="register-input">
-                <label for="name">Full Name</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>images/register/user.png" alt=""></span>
-                    <input type="text" class="input-grp form-control" name="name" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <?php echo form_error('name', '<div class="error">', '</div>'); ?>
-            </div>
+         
+         
             <div class="row">
+                 <div class="register-input col-lg-6">
+                    <label for="name">Full Name</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>images/register/user.png" alt=""></span>
+                        <input type="text" class="input-grp form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon1" name="name">
+                        
+                    </div>
+                    <?php echo form_error('name', '<div class="error">', '</div>'); ?>
+                </div>
+                
+                 <div class="register-input col-lg-6">
+                    <label for="name">User Type</label>
+                    <div class="input-group mb-3">
+                        <select class="input-grp form-select" placeholder="Select user type" aria-label="Username" aria-describedby="basic-addon1" name="user_type">
+                            <option selected>Select User Type</option>
+                            <option value="1" selected="">Vendor</option>
+                             <option value="2">Service Provider</option>
+                          </select>
+                    </div>
+                    <?php echo form_error('user_type', '<div class="error">', '</div>'); ?>
+                </div>
                 <div class="register-input col-lg-6">
                     <label for="name">Email Address <span class="input-span">(An OTP will be sent to this mail)</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>images/register/mail.png" alt=""></span>
                         <input type="text" class="input-grp form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="email">
+                        <button class="input-btn btn btn-outline-secondary" type="button" id="button-addon2">GET OTP</button>
+
                     </div>
                     <?php echo form_error('email', '<div class="error">', '</div>'); ?>
                 </div>
@@ -293,6 +310,34 @@
                         <input type="password" class="input-grp form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1" name="password">
                     </div>
                     <?php echo form_error('password', '<div class="error">', '</div>'); ?>
+                </div>
+                <div class="register-input col-lg-6">
+                    <label for="name">Bank Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Bank name" aria-label="Bank name" aria-describedby="button-addon2" name="bank_name">
+                    </div>
+                    <?php echo form_error('bank_name', '<div class="error">', '</div>'); ?>
+                </div>
+                  <div class="register-input col-lg-6">
+                    <label for="name">A/C No.</label>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Account number" aria-label="Account number" aria-describedby="button-addon2" name="account_number">
+                    </div>
+                    <?php echo form_error('account_number', '<div class="error">', '</div>'); ?>
+                </div>
+                  <div class="register-input col-lg-6">
+                    <label for="name">Branch Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Branch name" aria-label="Branch name" aria-describedby="button-addon2" name="branch_name">
+                    </div>
+                    <?php echo form_error('branch_name', '<div class="error">', '</div>'); ?>
+                </div>
+                <div class="register-input col-lg-6">
+                    <label for="name">IFSC Code</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="IFSC Code" aria-label="IFSC Code" aria-describedby="button-addon2" name="ifsc_code">
+                    </div>
+                    <?php echo form_error('ifsc_code', '<div class="error">', '</div>'); ?>
                 </div>
             </div>
             <button class="input-btn2 btn btn-outline-secondary" type="submit" id="button-addon2">REGISTER</button>

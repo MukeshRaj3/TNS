@@ -50,6 +50,8 @@ class Account extends Public_Controller {
                     $obj['email_id']=$login->email_id;
                     $obj['mobile_no']=$login->mobile_no;
                     $obj['seller_name']=$login->seller_name;
+                    $obj['user_type']=$login->user_type;
+                    
                     $this->session->set_userdata($obj);
                     redirect('seller/seller/dashboard');
                    // echo "dsdj"; die;
@@ -210,11 +212,31 @@ class Account extends Public_Controller {
 	
 	public function seller_logout() {
 		$this->data['title'] = "Logout";
-
+        $this->session->sess_destroy();
 		// log the user out
 		//$this->ion_auth->seller_logout();
 
 		// redirect them to the login page
 		redirect('account/seller_login', 'refresh');
 	}
+
+    public function send_otp() {
+        $identity = $this->input->post('identity');
+        $found = $this->general_model->getOne('ecom_sellers', ['mobile_no' => $identity]);
+        if (!empty($found)) {
+            $otp=get_otp();
+            $this->general_model->update('ecom_sellers',['mobile_no' => $identity],array('otp'=>$otp));
+            $response = [
+                'status' => 1,
+                'message' => 'OTP Send successfully',
+                'otp'=>$otp
+            ];
+        } else {
+            $response = [
+                'resultcode' => 0,
+                'message' => "Your account is not found"
+            ];
+        }
+        echo json_encode($response);
+    }
 }

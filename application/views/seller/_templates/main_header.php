@@ -71,7 +71,7 @@
                               <li><i class="fa fa-sign-in mr-2"></i><a href="<?php echo base_url('auth/register'); ?>">Register</a></li>
                               <li><i class="fa fa-sign-in mr-2"></i><a href="<?php echo base_url('account/seller_login'); ?>">Seller Login</a>
                               </li>
-                              <li><i class="fa fa-sign-in mr-2"></i><a href="<?php echo base_url('seller/register'); ?>">Seller Register</a></li>
+                              <li><i class="fa fa-sign-in mr-2"></i><a href="<?php echo base_url('account/seller_register'); ?>">Seller Register</a></li>
                               <?php endif; ?>
                            </ul>
                         </div>

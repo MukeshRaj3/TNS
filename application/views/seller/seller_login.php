@@ -146,7 +146,8 @@
                 <label for="name">Mobile Number <span class="input-span">(An OTP will be sent to this number)</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>images/register/phone.png" alt=""></span>
-                    <input type="text" class="input-grp form-control" name="identity" placeholder="Enter Mobile Number" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="input-grp form-control" id="identity" name="identity" placeholder="Enter Mobile Number" aria-label="Username" aria-describedby="basic-addon1">
+                      <button class="input-btn btn btn-outline-secondary" type="button" id="button-addon2" onclick="send_otp()">GET OTP</button>
                     <?php echo form_error('identity'); ?>
 
                 </div>
@@ -155,7 +156,7 @@
                 <label for="name">Enter OTP received on mobile</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>images/register/lock-line.png" alt=""></span>
-                    <input type="text" class="input-grp form-control" name="otp" placeholder="OTP from Phone" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="input-grp form-control" id="otp" name="otp" placeholder="OTP from Phone" aria-label="Username" aria-describedby="basic-addon1">
                     <?php echo form_error('password'); ?>
                 </div>
             </div>
@@ -166,3 +167,27 @@
     </section>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+       
+       function send_otp() {
+        var identity = $('#identity').val();
+          if(identity=='')
+          {
+            alert('Mobile number is required');
+            return false;
+          }
+         $.ajax({
+            type: "post",
+            url:'<?php echo base_url('send_otp'); ?>',
+            data: {identity:identity},
+            dataType: "json",
+            success: function (response) {
+               if(response.status == 1) {
+                  $('#otp').val(response.otp);
+               } else {
+                  $('#otp').val('');
+               }
+            }
+         });
+      }
+    </script>

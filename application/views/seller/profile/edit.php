@@ -63,6 +63,39 @@
 
                     </div>
                     <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 fields">
+                        <label for="document" class="form-label">GSTN No.</label>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="gstin"  aria-label="Recipient's username"
+                                aria-describedby="button-addon2">
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 fields">
+                        <div class="mb-3 ">
+                            <label for="name" class="form-label">Farm Name.</label>
+                            <input type="text" class="form-control" name="farm_name " id="name" value="<?php echo $res->farm_name  ?>">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 fields">
+                        <div class="mb-3 ">
+                            <label for="name" class="form-label">Gumasta MSME</label>
+                            <input type="text" class="form-control" name="gumasta_msme" id="name" value="<?php echo $res->gumasta_msme;  ?>">
+
+                        </div>
+                    </div>
+                  
+                     <div class="col-lg-3 col-md-3 col-sm-12 fields">
+                        <label for="document" class="form-label">PAN Card</label>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="pan"  aria-label="Recipient's username"
+                                aria-describedby="button-addon2">
+                            
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12 fields">
                             <div class="mb-3">
                                 <label for="document" class="form-label">Seller Document</label>
@@ -116,6 +149,36 @@
 
 
                     </div>
+                       <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 fields">
+                        <div class="mb-3 ">
+                            <label for="name" class="form-label">Bank Name</label>
+                            <input type="text" class="form-control" name="bank_name" id="name" value="<?php echo $res->bank_name ?>">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 fields">
+                        <div class="mb-3 ">
+                            <label for="name" class="form-label">A/C No.</label>
+                            <input type="text" class="form-control" name="account_number " id="name" value="<?php echo $res->account_number  ?>">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 fields">
+                        <div class="mb-3 ">
+                            <label for="name" class="form-label">Branch Name</label>
+                            <input type="text" class="form-control" name="branch_name" id="name" value="<?php echo $res->branch_name ?>">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 fields">
+                        <div class="mb-3 ">
+                            <label for="name" class="form-label">IFSC Code</label>
+                            <input type="text" class="form-control" name="ifsc_code" id="name" value="<?php echo $res->ifsc_code ?>">
+
+                        </div>
+                    </div>
+                </div>
                     <button type="submit" class="btn btn-warning save-btn">Save</button>
             </div>
             </form>

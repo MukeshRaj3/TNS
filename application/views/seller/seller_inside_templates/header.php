@@ -5,12 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nirman Stores</title>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/header.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/seller-dashboard.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/add_new_product.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/manage_product.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/price.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/profile.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/view_orders.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/product_details.css" />
+
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -30,8 +34,8 @@
                                     style="color: orange;">Account</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('seller/profile'); ?>">Profile</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('account/seller_logout'); ?>">Logout</a></li>
 
                             </ul>
                         </li>

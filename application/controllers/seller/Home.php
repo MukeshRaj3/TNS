@@ -15,6 +15,10 @@ class Home extends Seller_Controller
 
 	public function index()
 	{
+		if(empty($this->session->userdata('user_id')))
+    {
+    redirect('account/seller_login', 'refresh');
+    }
 		/* Title Page */
 		$this->page_title->push(lang('menu_users'));
 		$this->data['pagetitle'] = $this->page_title->show();

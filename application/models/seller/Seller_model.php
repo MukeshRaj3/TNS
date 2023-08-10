@@ -21,6 +21,9 @@ class Seller_model extends CI_Model {
 
 
         $this->table = 'ecom_sellers';
+        $this->table_orders = 'ecom_orders';
+        $this->table_orders_items = 'ecom_order_items';
+
 
         }
 
@@ -89,7 +92,7 @@ class Seller_model extends CI_Model {
         false;
       }
    }
-
+   
     public function file_upload($file_name,$upload_path)
    {
      

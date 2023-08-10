@@ -45,4 +45,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 /*---------------Seller Section----------------------*/
 $route['seller-dashboard'] = 'seller/seller/dashboard';
+$route['send_otp'] = 'account/send_otp';
+
 

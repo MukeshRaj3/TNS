@@ -1,9 +1,9 @@
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/seller-dashboard.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/transaction_report.css">
     <div class="col-lg-11 row r1">
                 <div class="complete-settle">
                     <div>
                         <h2>
-                            Dashboard
+                            Transaction Report
                         </h2>
                     </div>
                     <div>
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <h5 class="text-center mt-2">Total Sales</h5>
-                        <h2 class="text-center mt-3">Rs. <?php if(isset($total_sales[0]['total_order_amt'])){ echo $total_sales[0]['total_order_amt']+$total_sales[0]['total_delivery_charges']; } ?></h2>
+                        <h2 class="text-center mt-3">Rs. <?php echo $total_sales[0]['total_order_amt']+$total_sales[0]['total_delivery_charges']; ?></h2>
                 <div class="col-lg-12 middle-res">
                     
                     <div class="middle-board">
@@ -91,7 +91,16 @@
                         </div>
                     </div>
                     <div class="col-lg-12 months">
-                        <h4>Month wise data</h4>
+                        <div class="lower-dropdown">
+                            <h4><?php if(isset($_GET['type']) && $_GET['type']==1){ echo "Year"; }else if(isset($_GET['type']) && $_GET['type']==2){ echo "Months"; }else{ echo "Week"; } ?> wise data</h4>
+                            <select id="filter" class="form-select sele1 mb-3" aria-label="Default select example">
+                                <option selected>Year</option>
+                                <option value="1" <?php if(isset($_GET['type']) && $_GET['type']==1){ echo "selected=''"; } ?>>Year</option>
+                                <option value="2" <?php if(isset($_GET['type']) && $_GET['type']==2){ echo "selected=''"; } ?>>Months</option>
+                                <option value="3" <?php if(isset($_GET['type']) && $_GET['type']==3){ echo "selected=''"; } ?>>Week</option>
+                              </select>
+
+                        </div>
     
                         <div class="graph" id="columnchart_material">
     
@@ -118,16 +127,20 @@
 
               
   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    <script type="text/javascript" src="<?php echo base_url('assets/js/loader.js') ?>"></script>
  <script type="text/javascript">
-       
+       $("#filter").change(function (event) {
+            var type=$(this).val();
+            window.location.href ="<?php echo base_url('seller/seller/transaction_report?type=') ?>"+type;
+        });
 
    google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Months Wise','Sales'],
+          ['<?php if(isset($_GET['type']) && $_GET['type']==1){ echo "Year"; }else if(isset($_GET['type']) && $_GET['type']==2){ echo "Months"; }else{ echo "Week"; } ?> Wise','Sales'],
           <?php
             foreach ($total_months_wise_sales as $key => $value) {
              echo $value.',';

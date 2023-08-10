@@ -13,6 +13,10 @@ class Profile extends CI_Controller {
   }
 
   public function index() {
+    if(empty($this->session->userdata('user_id')))
+    {
+    redirect('account/seller_login', 'refresh');
+    }
     //echo "hello";  die;
     /* Title Page */
     //print_r($this->session->userdata()); die;
@@ -21,6 +25,10 @@ class Profile extends CI_Controller {
   }
 
   public function edit() {
+    if(empty($this->session->userdata('user_id')))
+    {
+    redirect('account/seller_login', 'refresh');
+    }
     //print_r($this->data['res']); die;
     /* Validate form input */
             $validation = [

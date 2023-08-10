@@ -44,7 +44,7 @@ if (!function_exists('get_otp')) {
 function get_otp($length = 10) 
 {
     $number = random_int(0,9999);
-    $number = str_pad($number,6, 0, STR_PAD_LEFT);
+    $number = str_pad($number,4, 0, STR_PAD_LEFT);
     return $number;
   
 }

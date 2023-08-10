@@ -28,7 +28,14 @@ class Product_model extends CI_Model {
     }
 
     public function product_details($id) {
-        $res= $this->db->get_where($this->table, ['seller_id' => $id])->result_array();
+         if(isset($_GET['cid']) && !empty($_GET['cid']))
+         {
+          $where=array('seller_id'=>$id,'l1c_id'=>$_GET['cid']);
+         }else{
+          $where=array('seller_id'=>$id);
+
+         }
+        $res= $this->db->get_where($this->table,$where)->result_array();
         if(!empty($res))
         {
             foreach ($res as $key => $value) {
@@ -44,6 +51,10 @@ class Product_model extends CI_Model {
             }
         }
         return $res;
+    }
+
+    public function get_product($id) {
+        return $this->db->get_where($this->table, ['id' =>$id])->result_array();
     }
 
     public function get_category() {

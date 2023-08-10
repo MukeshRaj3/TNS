@@ -148,6 +148,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>images/register/phone.png" alt=""></span>
                     <input type="text" class="input-grp form-control" name="identity" placeholder="Enter Mobile Number" aria-label="Username" aria-describedby="basic-addon1">
+                  
                     <?php echo form_error('identity'); ?>
 
                 </div>
