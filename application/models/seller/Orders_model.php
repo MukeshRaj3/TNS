@@ -86,6 +86,7 @@ class Orders_model extends CI_Model {
                 }
 
                 $res_address= $this->db->get_where($this->table_ecom_addresses, ['id' => $value['address_id'],'user_id'=>$value['user_id']])->result_array();
+                //print_r($res_address); die;
                if(!empty($res_address))
                  {
                    $res[$key]['customer_address']=$res_address[0];

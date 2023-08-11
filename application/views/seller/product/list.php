@@ -33,7 +33,7 @@
                 <table class="table mt-5 table-striped">
                     <thead class="mb-4">
                         <tr>
-                            <th scope="col" class="table_head">ID</th>
+                            <th scope="col" class="table_head">S.No</th>
                             <th scope="col" class="table_head">Name</th>
                             <th scope="col" class="table_head">MRP</th>
                             <th scope="col" class="table_head">Discount</th>
@@ -49,7 +49,7 @@
                               foreach ($list as $key => $value) {
                          ?>
                         <tr class="table_tr table-wid">
-                            <td><?php $key+1; ?></td>
+                            <td><?php echo $key+1; ?></td>
                             <td><?php echo $value['product_name'] ?></td>
                             <td>Rs. <?php echo $value['price_for_seller'] ?></td>
                             <td>Rs. <?php echo $value['discount_percent'] ?></td>

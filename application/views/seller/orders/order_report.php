@@ -11,7 +11,7 @@
                 <div class="complete-settle">
                     <div>
                         <h2>
-                            Transaction Report
+                            Order Report
                         </h2>
                     </div>
                     <div>
@@ -30,7 +30,7 @@
                 <th>Order no</th>
                 <th>Order person name</th>
                 <th>Billing name</th>
-                <th>Billing address</th>
+               <!--  <th>Billing address</th> -->
                 <th>GST</th>
                 <th>Order amount</th>
             </tr>
@@ -45,7 +45,7 @@
                 <td><?php echo $value['order_no'] ?></td>
                 <td><?php echo $value['first_name'] ?></td>
                 <td><?php echo $value['billing_fname'].' '.$value['billing_lname'] ?></td>
-                <td><?php echo $value['address'] ?></td>
+                <!-- <td><?php //echo $value['address'] ?></td> -->
                 <td><?php echo $value['tax'] ?></td>
                 <td><?php echo $value['total_order_amt']+$value['tax'] ?></td>
             </tr>
@@ -72,6 +72,6 @@
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
-    } );
-} )
+      });
+    })
    </script>

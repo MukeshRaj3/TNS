@@ -15,7 +15,7 @@
                         <a class="nav-link1" href="<?php echo base_url('seller/orders?payment_status=0') ?>">Payment Pending</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link1" href="<?php echo base_url('seller/orders?status=2') ?>">Cancled</a>
+                        <a class="nav-link1" href="<?php echo base_url('seller/orders?status=2') ?>">Cancelled</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link1" href="<?php echo base_url('seller/orders?status=1') ?>">Shipped</a>
@@ -35,7 +35,7 @@
                             <th scope="col" class="table_head">Order Date</th>
                             <th scope="col" class="table_head">Delivery Expected Date</th>
                             <th scope="col" class="table_head">Order Status</th>
-                            <th scope="col" class="table_head"></th>
+                            <th scope="col" class="table_head">Action</th>
                         </tr>
                     </thead>
                     <tbody class="table_body ">
@@ -49,11 +49,13 @@
                             <td><?php echo $value['item_qty'] ?></td>
                             <td><?php echo date('d/m/Y H:i A',strtotime($value['order_datetime'])) ?></td>
                             <td>-</td>
-                            <td style="color:<?php if($value['order_track_status']=='' || $value['order_track_status']=='0'){echo "#2400FF"; }else if($value['order_track_status']=='1'){echo "#FFD200"; }else if($value['order_track_status']=='2'){echo "red"; }else if($value['order_track_status']=='3'){echo "green"; } ?>"><b><?php if($value['order_track_status']=='' || $value['order_track_status']=='0'){echo "Pending"; }else if($value['order_track_status']=='1'){echo "Shipped"; }else if($value['order_track_status']=='2'){echo "Cancled"; }else if($value['order_track_status']=='3'){echo "Delivered"; } ?></b></td>
+                            <td style="color:<?php if($value['order_track_status']=='' || $value['order_track_status']=='0'){echo "#2400FF"; }else if($value['order_track_status']=='1'){echo "#FFD200"; }else if($value['order_track_status']=='2'){echo "red"; }else if($value['order_track_status']=='3'){echo "green"; } ?>"><b><?php if($value['order_track_status']=='' || $value['order_track_status']=='0'){echo "Pending"; }else if($value['order_track_status']=='1'){echo "Shipped"; }else if($value['order_track_status']=='2'){echo "Cancelled"; }else if($value['order_track_status']=='3'){echo "Delivered"; } ?></b>
+                                
+                            </td>
                             <td>
                                 <div class="dropdown">
-                                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border: none;">
-                                        <img src="<?php echo base_url(); ?>assets/images/More Circle.png" />
+                                    <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border:1px;">
+                                    Change Status
                                     </button>
                                     <ul class="dropdown-menu">
                                         <?php if($this->session->userdata('user_type')=='2') {?>
@@ -63,7 +65,7 @@
                                         <li><a class="dropdown-item" href="<?php echo base_url('seller/orders/view_orders/'.$value['id']); ?>">View Order</a></li>
                                         <li><a class="dropdown-item" href="javascript:void(0);" onclick="change_status('<?php echo $value['id'] ?>','1');">Shipped Order</a></li>
                                         <li><a class="dropdown-item" href="javascript:void(0);" onclick="change_status('<?php echo $value['id'] ?>','2');">Cancel Order</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="change_status('<?php echo $value['id'] ?>','3');">Deliverd Order</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="change_status('<?php echo $value['id'] ?>','3');">Delivered Order</a></li>
                                         <li><a class="dropdown-item" href="javascript:void(0);" onclick="change_status('<?php echo $value['id'] ?>','4');">Reject Order</a></li>
                                         <li><a class="dropdown-item" href="<?php echo base_url('seller/orders/settlement/'.$value['id']) ?>">View Settlement</a></li>
                                         <li><a class="dropdown-item" href="#">Order Invoice</a></li>

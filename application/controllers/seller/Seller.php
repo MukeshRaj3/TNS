@@ -70,7 +70,60 @@ class Seller extends CI_Controller {
     $this->template->seller_render_page('seller/dashboard',$this->data);
   }
 
+  
   public function transaction_report() {
+    if(empty($this->session->userdata('user_id')))
+    {
+    redirect('account/seller_login', 'refresh');
+    }
+    $res_ora=array();
+    $total_order=0;
+    $previous_total_order=0;
+    $seller_id=$this->session->userdata('user_id');
+    $res = $this->seller_model->simple_query("SELECT id FROM `ecom_products` WHERE seller_id='".$seller_id ."' ORDER BY id");
+    if(!empty($res)){
+
+      $products_arr=array();
+      foreach($res as $key => $value) {
+              $products_arr[] = $value['id'];
+      }
+       $all_pid=implode(',',$products_arr);
+       $current_date=date('Y-m-d'); 
+       $previous_date= date('Y-m-d', strtotime($current_date. ' - 1 days'));  
+       $res_ora = $this->seller_model->simple_query("SELECT SUM(`ecom_orders`.`delivery_charges`) as total_delivery_charges,SUM(`ecom_order_items`.`unit_price`) as total_order_amt,`ecom_orders`.`tax`,`ecom_orders`.`order_no`,`users`.`first_name`,`users`.`last_name`,`users`.`username`,`ecom_addresses`.`address`,`ecom_addresses`.`first_name` as billing_fname,`ecom_addresses`.`last_name` as billing_lname FROM `ecom_orders` JOIN `ecom_order_items` ON `ecom_order_items`.`order_id`=`ecom_orders`.`id` LEFT JOIN `ecom_addresses` ON `ecom_orders`.`address_id`=`ecom_addresses`.`id` LEFT JOIN `users` ON `ecom_orders`.`user_id`=`users`.`id` WHERE  `ecom_order_items`.`pid` IN($all_pid)");
+    
+      }
+    $this->data['transaction_report']=$res_ora;
+    $this->template->seller_render_page('seller/transaction_report/transaction_report',$this->data);
+  }
+
+   public function order_report() {
+    if(empty($this->session->userdata('user_id')))
+    {
+    redirect('account/seller_login', 'refresh');
+    }
+    $res_ora=array();
+    $total_order=0;
+    $previous_total_order=0;
+    $seller_id=$this->session->userdata('user_id');
+    $res = $this->seller_model->simple_query("SELECT id FROM `ecom_products` WHERE seller_id='".$seller_id ."' ORDER BY id");
+    if(!empty($res)){
+
+      $products_arr=array();
+      foreach($res as $key => $value) {
+              $products_arr[] = $value['id'];
+      }
+       $all_pid=implode(',',$products_arr);
+       $current_date=date('Y-m-d'); 
+       $previous_date= date('Y-m-d', strtotime($current_date. ' - 1 days'));  
+       $res_ora = $this->seller_model->simple_query("SELECT SUM(`ecom_orders`.`delivery_charges`) as total_delivery_charges,SUM(`ecom_order_items`.`unit_price`) as total_order_amt,`ecom_orders`.`tax`,`ecom_orders`.`order_no`,`users`.`first_name`,`users`.`last_name`,`users`.`username`,`ecom_addresses`.`address`,`ecom_addresses`.`first_name` as billing_fname,`ecom_addresses`.`last_name` as billing_lname FROM `ecom_orders` JOIN `ecom_order_items` ON `ecom_order_items`.`order_id`=`ecom_orders`.`id` LEFT JOIN `ecom_addresses` ON `ecom_orders`.`address_id`=`ecom_addresses`.`id` LEFT JOIN `users` ON `ecom_orders`.`user_id`=`users`.`id` WHERE  `ecom_order_items`.`pid` IN($all_pid)");
+    
+      }
+    $this->data['transaction_report']=$res_ora;
+    $this->template->seller_render_page('seller/orders/order_report',$this->data);
+  }
+
+  public function transaction_report_11_08_2023() {
     if(empty($this->session->userdata('user_id')))
     {
     redirect('account/seller_login', 'refresh');
