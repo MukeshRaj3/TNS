@@ -655,6 +655,9 @@ class Welcome extends Public_Controller
 					if($final_amount != intval($final_price)){
 						$this->session->set_flashdata('message', [0, 'price get change']);
 					} else {
+
+						$res =$this->general_model->getOne('convenience_fees',array('min_order_amt >='=>$final_amount,'max_order_amt <='=>$final_amount));
+						$convenience_fees=$res->fees;
 						// print_r($_POST);
 						$order_no = rand(000000, 999999);
 						$order_date = date('Y-m-d H:i:s');
@@ -666,6 +669,8 @@ class Welcome extends Public_Controller
 									'order_item_array' => $cart_orders,
 									'address_id' => $this->input->post('address_id'),
 									'user_id' => $this->session->userdata('user_id'),
+									'convenience_fees'=>$convenience_fees,
+									'gst_amount'=>$gst_amount
 								];
 						$order_id = $this->home_model->insert_cart_orders($insert_data);
 						$user_id = $this->session->userdata('user_id');

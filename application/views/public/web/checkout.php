@@ -198,6 +198,14 @@
                                             </span>
                                         </td>
                                     </tr>
+                                     <tr class="cart-subtotal">
+                                        <th>GST Amount</th>
+                                        <td>
+                                            <span class="Price-amount amount">
+                                                <span class="Price-currencySymbol">₹</span><span id="sub_total"><?php echo @$gst_mount; ?></span>
+                                            </span>
+                                        </td>
+                                    </tr>
                                     <tr class="cart-shipping">
                                         <th>Shipping</th>
                                         <td>
